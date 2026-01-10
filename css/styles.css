@@ -47,7 +47,49 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 700;
     letter-spacing: 0.5px;
 }
- 
+ body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;      /* Keeps it in place */
+  top: 0;               /* Sticks it to the top */
+  left: 0;              /* Aligns to the left */
+  width: 100%;          /* Full width */
+  background-color: rgba(255, 0, 0, 0.5);  /* 50% transparent red */
+  z-index: 1000;        /* Keeps it above other content */
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;        /* Puts items in a row */
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0;
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s;
+}
+
+.navbar ul li a:hover {
+  background-color: #575757;
+}
+
+/* Push content down so it doesn’t hide under navbar */
+.content {
+  padding-top: 70px;  /* Adjust this = navbar height */
+}
+
 .main-nav{
     background-color: var(--black);
     padding: 10px 0;/*shorthand*/
@@ -98,12 +140,13 @@ li.nav-item.activea{
     margin-right: auto;
 
     text-align: center;
-
+     
+    padding-top: 50px; /*to avoid content being hidden under the navbar*/
 }
 
 /*banner*/
 #banner{
-   width: 60%;
+   width: 100%;
    border-radius: 20px;
    margin: 10px 0;
 }
@@ -149,8 +192,9 @@ article p.bolder{
     clear: both;
 }
 #contact{
-    color: var(--red);
-    width: 40%;
+    color: var(--white);
+    text-align: left;
+    width: 100%;
     margin: 1%;
     background-color: var(--black);
     padding: 10px;
@@ -234,7 +278,7 @@ footer{
 
 }
 footer a{
-    color: var(--red);
+    color: var(--white);
     text-decoration: none;
 }
 footer a:hover{
